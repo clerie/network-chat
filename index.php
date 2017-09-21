@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Clemens" >
-    <link rel="icon" href="../../../../favicon.ico">
+    <meta name="author" content="milchinsel.de Clemens Riese" >
+    <link rel="icon" href="favicon.ico">
     
     <title>MI Nerdlaunch</title>
     
@@ -20,15 +20,15 @@
 
     <script src="jquery.js"></script>
 		<script>
-		function uhr() {
-			$.get( "load-uhr.php", function( data ) {
-				$( "#uhr" ).html( data );
+		function clock() {
+			$.get( "load-clock.php", function( data ) {
+				$( "#clock" ).html( data );
 			});
 		}
 
-		setInterval(function(){ uhr(); }, 1000);
+		setInterval(function(){ clock(); }, 1000);
 
-        window.onload = uhr();
+        window.onload = clock();
 
 		function messages() {
 			$.get( "load-messages.php", function( data ) {
@@ -41,15 +41,15 @@
         window.onload = messages();
 
 
-        function todo() {
-			$.get( "load-todo.php", function( data ) {
-				$( "#todo" ).html( data );
+        function info() {
+			$.get( "load-info.php", function( data ) {
+				$( "#info" ).html( data );
 			});
 		}
 
-		setInterval(function(){ todo(); }, 10000);
+		setInterval(function(){ info(); }, 10000);
 
-        window.onload = todo();
+        window.onload = info();
 
         function message_send() {
             var text = $('#text').val();
@@ -74,10 +74,10 @@
                             <h4 class="card-title">MI Nerdlaunch</h4>
                         </div>
                         <div class="card-body" style="overflow: auto;">
-                            <div id="todo">Laden...</div>
+                            <div id="info">Laden...</div>
                         </div>
                         <div class="card-footer">
-                            <div id="uhr">Laden...</div>
+                            <div id="clock">Laden...</div>
                         </div>
                     </div>
                 </div>
@@ -99,44 +99,12 @@
                             <div id="messages">Laden...</div>
                         </div>
                         <div class="card-footer">
-                            &copy; milchinsel.de Clemens Riese <div id="status"></div>
+				&copy; <a href="https://milchinsel.de>milchinsel.de</a> Clemens Riese <div id="status"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="modal" id="modalBenutzername" tabindex="-1" role="dialog" aria-labelledby="modalBenutzernameLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalBenutzernameLabel">New message</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="recipient-name" class="form-control-label">Recipient:</label>
-                                <input type="text" class="form-control" id="recipient-name">
-                            </div>
-                            <div class="form-group">
-                                <label for="message-text" class="form-control-label">Message:</label>
-                                <textarea class="form-control" id="message-text"></textarea>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Send message</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        
-        
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
